@@ -1,0 +1,516 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #007AF3;
+}
+
+
+
+
+
+body {
+  background: #f2f2f2;
+  margin: 0;
+  font-family: 'Poppins';
+}
+
+section {
+  padding: 5em 2em;
+}
+
+ul { 
+  list-style-type: none; 
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+// navbar mobile
+
+.navbar {
+  background: white;
+  padding: 1em;
+
+  .container {
+    display: flex;
+    place-content: space-between;
+  
+   .logo {
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+      font-size: 1.2em;
+    
+     span {
+       color: var(--primary-color);
+      }
+   }
+   
+   
+
+   nav {
+    display: none;  // hides hamburger nav
+    position: fixed;
+    background: #20272e;
+    z-index: 999;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 66%;
+    padding: 1em;
+   }
+
+   ul.nav-left {
+     margin-top: 5em;
+   }
+
+   li {
+
+    a {
+      color: white;
+      text-decoration: none;
+      display: block; // have to put block on a elements if want to add padding
+      padding: .5em;
+      text-align: right;
+      font-size: 1.3em;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+   }
+
+   .exit-btn {
+     float: right;
+     cursor: pointer;
+     margin: .5em;
+   }
+
+   .menu-btn { 
+     cursor: pointer;
+   }
+
+   .menu-open { //nav hamburger menu-btn JS command when burger is clicked on (adds this class to nav class above & needs to be located in this parent)
+    display: block; 
+  }
+
+
+  }
+}
+
+
+
+
+
+
+
+
+//hero mobile 
+
+.hero {
+  text-align: center;
+
+  .container {
+
+    .column-left {
+
+      p {
+        color: grey;
+        text-transform: uppercase;
+        letter-spacing: .3em;
+        font-weight: bold;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        line-height: 1.3em;
+        margin-top: .2em;
+      }
+    }
+
+    .primary-cta {
+      text-decoration: none;
+      background: var(--primary-color);
+      color: white;
+      font-weight: bold;
+      font-size: 1.4em;
+      border-radius: 5em;
+      padding: .6em 1.3em;
+      display: inline-block;
+    }
+
+    .secondary-cta {
+      display: block;
+      margin-top: 1em;
+      color: #444444;
+
+      img {
+        margin-right: .5em;
+      }
+    }
+  }
+
+  img.illustration {
+    margin-top: 3em;
+    width: 70%;
+  }
+}
+
+
+
+// features mobile 
+
+.features {
+  background: #20272e;
+  color: white;
+  
+
+  .container {
+
+    .features-ul {
+      list-style-type: none;
+      margin: 0;
+      padding-left: .1em;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+
+      li {
+        position: relative;
+        font-size: 1.1em;
+        margin-bottom: 1em;
+        margin-left: 2em;
+
+        &:before {
+          position: absolute;
+          content: '';
+          background-size: contain;
+          background-image: url(../images/bullet.svg);
+          left: -2em;
+          margin-right: .5em;
+          width: 20px;
+          height: 20px;
+
+        }
+      }
+    }
+
+    img {
+      display: none;
+    }
+  }
+}
+
+
+// testimonials mobile 
+.testimonials {
+  background: var(--primary-color);
+  color: white;
+
+    li {
+      background: #006bd6;
+      text-align: center;
+      border-radius: 1em;
+      margin: 0 auto 5em auto;
+      padding: 2em 1em;
+      padding: 2em 1em;
+      width: 80%;
+    }
+
+
+    img {
+      height: 5em;
+      width: 5em;
+      border-radius: 50%;
+      margin-top: -4.5em;
+      border: 5px solid #006bd6;
+
+    }
+
+}
+
+
+
+// // contact mobile 
+.contact {
+
+  h2 {
+    font-size: 2em;
+  
+  }
+
+  label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: .5em;
+
+  }
+
+
+  input, textarea {
+    border-radius: .3em;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid grey;  
+    padding: .8em;
+    margin-bottom: 1em;
+    
+  }
+
+
+  .send-cta {
+    background: var(--primary-color);
+    color: white;
+    display: inline-block;
+    width: unset;
+    font-weight: bold;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 5em;
+    cursor: pointer;
+    padding: .8em 2em;
+    margin-bottom: 5em;
+  }
+
+
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+
+}
+
+
+
+
+
+// ***************************************** 768px Viewport, Ipad Mini Size for Navbar Only **************************************************
+
+
+
+@media only screen and (min-width: 768px) {
+ 
+  // navbar
+  .menu-btn, .exit-btn {
+    display: none;
+  }
+
+  .navbar {
+
+    .container {
+      display: grid;
+      grid-template-columns: 180px auto; // for logo
+      justify-content: unset;
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+
+        ul {
+          display: flex;
+
+          a {
+            color: black;
+            font-size: 1em;
+            padding: .1em 1em;
+          }
+
+          .home-btn {
+            font-weight: bold;
+          }
+        
+        }
+
+        .nav-left {
+          margin: 0;
+        }
+
+        .nav-right {
+          .premium-btn {
+            a {
+              color: var(--primary-color);
+              border: 3px solid var(--primary-color);
+              font-weight: bold;
+              border-radius: 5em;
+              margin-top: -.2em;
+
+              &:hover {
+                background: var(--primary-color);
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      
+    }
+    
+  }
+
+  
+}
+
+// ********************************************* 1080px - ipad - super small laptop Viewport Size **************************************************
+
+@media only screen and (min-width: 1080px) {
+  
+ 
+  .container {
+    width: 1080px; // images and all elents cant go wider than 1080px
+    margin: 0 auto; // this and above centers everything at 1080, 
+  }
+
+   section {
+    padding: 10em 4em; // doubles the mobile padding above
+  }
+
+
+
+
+
+
+
+
+  // hero section
+  .hero .container {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+
+    .column-left {
+      margin: 3em 3em 0 5em;
+
+      h1 {
+        font-size: 3em;
+        width: 90%;
+      }
+    }
+
+    .illustration {
+      width: 30%;
+      margin-right: 8em;
+    }
+
+    .hero-cta {
+      display: flex;
+    }
+    .primary-cta {
+      margin-right: 1em;
+    }
+  }
+
+
+
+
+  // features section
+  .features {
+    position: relative; // for img positioning below..
+
+   .container {
+
+      .features-ul {
+        display: block;
+        margin-left: 5em;
+
+        li {
+          font-size: 1.4em;
+
+          &:before { // makes green checks bigger, cause to small for desktop
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    
+
+      img {
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 350px;
+        bottom: -2em;
+      }
+
+    }
+
+  }
+
+
+
+ // testimonials section
+
+  .testimonials ul {
+    display: flex;
+
+    li {
+      margin: 0 1em;
+    }
+  }
+
+
+  // contact section
+
+  .contact {
+    position: relative;
+
+    .container {
+      display: flex;
+    }
+  }
+
+  .contact-right {
+    position: absolute;
+    right: 0;;
+    top: 0;
+    width: 45%;
+    height: 100%;
+
+    iframe {
+      height: 100%;
+    }
+  }
+
+
+}
+
+
+// ********************************************* 1450px - desktop size **************************************************
+
+@media only screen and (min-width: 1450px) {
+
+// features extra images on sides only
+  .features {
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 10%;
+      height: 20em;
+      background: var(--primary-color);
+      left: 0;
+      top: -4em;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 20em;
+      background: url('../images/dots.svg') no-repeat;
+      left: 4.5em;
+      top: 2em;
+    }
+  }
+
+}
